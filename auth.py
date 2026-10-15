@@ -22,7 +22,7 @@ def register(username, password, role="customer"):
 
 def login(username, password):
     user = database.find_user(username)
-    if user == None:
+    if user is None:
         print("User not found")
         return None
     if user[1] == hash_password(password):
